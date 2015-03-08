@@ -1,27 +1,55 @@
-# Project Overview
+#frontend-nanodegree-feedreader
+
+This project was completed as part of Udacity's Frontend-Web-Developer Nanodegree program. It uses Jasmine.js to test RSS feeds and throws errors if certain predetermined conditions are not met. Tests include the following:
+
+- Checking that each RSS feed is defined, has a URL, and has a name.
+- Checking that the webpage menu is hidden by default and toggles visibility when clicked.
+- Making sure initial entries are attached to the correct container in the DOM.
+- Ensuring that the content for each entry is different.
+
+(See below for details about the project's requirements).
+
+
+To see how the project works, follow these steps:
+
+1. Download the zip file and extract the files.
+2. Make sure you have an internet connection and open the index.html file in your browser.
+3. You should see the Jasmine test cases listed at the bottom of the screen. If things
+are working properly, it should read '7 specs, 0 failures.' This means that all the test cases
+passed.
+4. To see the code for the tests, open /jasmine/spec/feedreader.js with a text editor.
+
+Sources:
+
+- Original repository: https://github.com/udacity/frontend-nanodegree-feedreader 
+- Jasmine documentation: http://jasmine.github.io/2.0/introduction.html
+- Udacity forum: https://www.udacity.com/
+
+
+
+Project Overview
 
 In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
 
-
-## Why this Project?
+Why this Poject?
 
 Testing is an important part of the development process and many organizations practice a standard of development known as "test-driven development". This is when developers write tests first, before they ever start developing their application. All the tests initially fail and then they start writing application code to make these tests pass.
 
 Whether you work in an organization that uses test-driven development or in an organization that uses tests to make sure future feature development doesn't break existing features, it's an important skill to have!
 
 
-## What will I learn?
+ What will I learn?
 
 You will learn how to use Jasmine to write a number of tests against a pre-existing application. These will test the underlying business logic of the application as well as the event handling and DOM manipulation.
 
 
-## How will this help my career?
+ How will this help my career?
 
 * Writing effective tests requires analyzing multiple aspects of an application including the HTML, CSS and JavaScript - an extremely important skill when changing teams or joining a new company.
 * Good tests give you the ability to quickly analyze whether new code breaks an existing feature within your codebase, without having to manually test all of the functionality.
 
 
-# How will I complete this project?
+ How will I complete this project?
 
 1. Download the [required project assets](http://github.com/udacity/frontend-nanodegree-feedreader).
 2. Review the functionality of the application within your browser.
