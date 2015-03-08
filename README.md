@@ -38,18 +38,18 @@ Testing is an important part of the development process and many organizations p
 Whether you work in an organization that uses test-driven development or in an organization that uses tests to make sure future feature development doesn't break existing features, it's an important skill to have!
 
 
- What will I learn?
+What will I learn?
 
 You will learn how to use Jasmine to write a number of tests against a pre-existing application. These will test the underlying business logic of the application as well as the event handling and DOM manipulation.
 
 
- How will this help my career?
+How will this help my career?
 
 * Writing effective tests requires analyzing multiple aspects of an application including the HTML, CSS and JavaScript - an extremely important skill when changing teams or joining a new company.
 * Good tests give you the ability to quickly analyze whether new code breaks an existing feature within your codebase, without having to manually test all of the functionality.
 
 
- How will I complete this project?
+How will I complete this project?
 
 1. Download the [required project assets](http://github.com/udacity/frontend-nanodegree-feedreader).
 2. Review the functionality of the application within your browser.
