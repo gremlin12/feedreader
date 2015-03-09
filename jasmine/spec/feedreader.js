@@ -130,9 +130,10 @@ $(function() {
      // Empty feed container before each spec.
 
     describe('New Feed Selection', function() {
+    	var feedContainer = $('.feed');
+
         beforeEach(function(done) {
-        	this.feedContainer = $('.feed');
-        	this.feedContainer.empty(); 
+        	feedContainer.empty(); 
             done();
         });
 
@@ -141,8 +142,8 @@ $(function() {
 
         it('has content', function() {
         	loadFeed(0);
-        	expect(this.feedContainer.length).toBeGreaterThan(0);
-        	this.firstHtml = this.feedContainer[0];       
+        	expect(feedContainer.length).toBeGreaterThan(0);
+        	this.firstHtml = feedContainer.html(); 
         });
 
         // Load second feed and check that it is not empty. Save its content as a variable.
@@ -150,8 +151,8 @@ $(function() {
 
         it('content actually changes', function() {
         	loadFeed(1);
-        	expect(this.feedContainer.length).toBeGreaterThan(0);
-        	this.secondHtml = this.feedContainer[0];
+        	expect(feedContainer.length).toBeGreaterThan(0);
+        	this.secondHtml = feedContainer.html();
         	expect(this.firstHtml).not.toEqual(this.secondHtml);
         });         
     });   
