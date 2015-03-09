@@ -49,7 +49,7 @@ $(function() {
          * and that the name is not empty.
          */
         it('has a name', function() {
-            for (item in allFeeds) {
+            for (var item in allFeeds) {
                 var currentName = allFeeds[item].name;
                 expect(currentName).toBeDefined();
                 expect(currentName.length).not.toBe(0);
@@ -80,10 +80,12 @@ $(function() {
           */
 
          it('toggles visibility when icon clicked', function() {
-            $('.menu-icon-link').click();
-            expect($('body').hasClass('menu-hidden')).toBe(false);
-            $('.menu-icon-link').click();
-            expect($('body').hasClass('menu-hidden')).toBe(true);
+         	var menuIcon = $('.menu-icon-link');
+         	var body = $('body');
+            menuIcon.click();
+            expect(body.hasClass('menu-hidden')).toBe(false);
+            menuIcon.click();
+            expect(body.hasClass('menu-hidden')).toBe(true);
          });         
      });
 
@@ -102,7 +104,8 @@ $(function() {
 
     describe('Initial Entries', function() {
 
-        beforeEach(function(done) {                  
+        beforeEach(function(done) {   
+            $('.feed').empty();        // Empty feed container to make sure only new entries are counted               
             init();
             done();
         });
@@ -117,27 +120,42 @@ $(function() {
 
     /* Write a new test suite named "New Feed Selection" */
 
-     // Call the loadFeed() function with allFeeds indexes
-     // as paramaters.
-
-    describe('New Feed Selection', function() {
-        beforeEach(function(done) {
-            loadFeed(0);            
-            loadFeed(1);             
-            done();
-        });
 
         /* Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-        
-        // Check that .feed elements in the DOM are not the same. 
-        it('content actually changes', function() {
-            var textOne = $('.feed a:nth-child(1)');
-            var textTwo = $('.feed a:nth-child(2)');
-            expect(textOne).not.toEqual(textTwo);
 
+     // Save .feed container as 'this' so that it can be shared by all specs.
+     // Empty feed container before each spec.
+
+    describe('New Feed Selection', function() {
+        beforeEach(function(done) {
+        	this.feedContainer = $('.feed');
+        	this.feedContainer.empty(); 
+            done();
+        });
+
+        
+        // Load first feed and check that it is not empty. Save its content as a variable.  
+
+        it('has content', function() {
+        	loadFeed(0);
+        	expect(this.feedContainer.length).toBeGreaterThan(0);
+        	this.firstHtml = this.feedContainer[0];       
+        });
+
+        // Load second feed and check that it is not empty. Save its content as a variable.
+        // Check that the content of first and second feeds are not the same.
+
+        it('content actually changes', function() {
+        	loadFeed(1);
+        	expect(this.feedContainer.length).toBeGreaterThan(0);
+        	this.secondHtml = this.feedContainer[0];
+        	expect(this.firstHtml).not.toEqual(this.secondHtml);
         });         
-    });
+    });   
+
+
+
 }());
