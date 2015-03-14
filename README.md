@@ -1,4 +1,4 @@
-#frontend-nanodegree-feedreader
+#feedreader
 
 This project was completed as part of Udacity's Frontend-Web-Developer Nanodegree program. It uses Jasmine.js to test RSS feeds and throws errors if certain predetermined conditions are not met. Tests include the following:
 
